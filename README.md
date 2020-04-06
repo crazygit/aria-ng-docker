@@ -14,9 +14,4 @@ $ docker build --build-arg version=1.1.4
 
 ```
 $ docker run -p 80:80 crazygit/aria_ng
-
-```
-
-```
-
 ```
