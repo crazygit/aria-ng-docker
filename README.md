@@ -9,6 +9,8 @@ Build based on <https://github.com/mayswind/AriaNg/releases>
 ```
 # currrent lastest version is 1.1.4, you can get latest version info from
 # https://github.com/mayswind/AriaNg/releases
+$ git clone https://github.com/crazygit/aria-ng-docker.git
+$ cd aria-ng-docker
 $ docker build --build-arg version=1.1.4 .
 ```
 
