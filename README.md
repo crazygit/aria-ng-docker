@@ -2,7 +2,7 @@
 ## AriaNg docker image
 
 
-Build based on <ttps://github.com/mayswind/AriaNg/releases>
+Build based on <https://github.com/mayswind/AriaNg/releases>
 
 ### Build
 
