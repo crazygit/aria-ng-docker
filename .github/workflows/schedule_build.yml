@@ -9,6 +9,7 @@ on:
       master
     paths:
       - ".github/workflows/schedule_build.yml"
+      - ".Dockerfile"
 
 
 jobs:
