@@ -1,3 +1,4 @@
+![Schedule Build AriaNg image](https://github.com/crazygit/aria-ng-docker/workflows/Schedule%20Build%20AriaNg%20image/badge.svg)
 ## AriaNg docker image
 
 
