@@ -22,7 +22,7 @@ jobs:
     - name: Get latest release version
       run: |
         version=$(curl -s https://api.github.com/repos/mayswind/AriaNg/releases/latest | grep tag_name |cut -d '"' -f4)
-        echo "::set-env name=version::$version"
+        echo "version=$version" >> $GITHUB_ENV
 
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
@@ -32,3 +32,14 @@ jobs:
         password: ${{ secrets.DOCKER_TOKEN }}
         buildargs: version
         tags: "latest,${{ env.version }}"
+
+    - name: Touch change every first day of month
+        run: if [[ $(date +%d) -eq 1 ]]; then echo $(date) >> .run.log; fi
+
+    - name: Auto Commit to keep Scheduled workflows alive
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: crazygit
+          author_email: lianglin999@gmail.com
+          message: 'Auto Commit to keep Scheduled workflows alive'
+          add: .run.log
