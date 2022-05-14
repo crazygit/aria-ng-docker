@@ -34,7 +34,7 @@ jobs:
         tags: "latest,${{ env.version }}"
 
     - name: Touch change every first day of month
-      run: if [[ $(date +%d) -eq 1 ]] && ! $(grep -q "$(date +'%F')" .keep_alive); then echo $(date +'%F') >> .keep_alive; fi
+      run: if ! $(grep -q "$(date +'%F')" .keep_alive); then echo $(date +'%F') >> .keep_alive; fi
 
     - name: Auto Commit to keep Scheduled workflows alive
       uses: EndBug/add-and-commit@v7
