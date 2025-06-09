@@ -25,7 +25,7 @@ jobs:
         echo "version=$version" >> $GITHUB_ENV
 
     - name: Publish to Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: crazygit/aria_ng
         username: ${{ secrets.DOCKER_USERNAME }}
@@ -37,7 +37,7 @@ jobs:
       run: if ! $(grep -q "$(date +'%F')" .keep_alive); then echo $(date +'%F') >> .keep_alive; fi
 
     - name: Auto Commit to keep Scheduled workflows alive
-      uses: EndBug/add-and-commit@v7
+      uses: EndBug/add-and-commit@v9
       with:
         author_name: crazygit
         author_email: lianglin999@gmail.com
